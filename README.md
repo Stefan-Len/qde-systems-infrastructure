@@ -139,6 +139,21 @@ This repository does not include:
 - Persist structured evidence for every material decision.
 - Fail closed when a required safety condition is not met.
 
+## Commercial production version
+
+This repository is a public architecture sample only.
+
+The full production implementation, Quant Deterministic Execution Engine
+(QDE), is a separate proprietary commercial system available under a
+per-instrument exclusive commercial license. Private source-code review
+and technical due diligence are available under NDA.
+
+The public sample does not include broker integrations, proprietary
+strategy logic, private model artifacts, credentials, or production
+deployment materials.
+
+Contact: stefanlen@qde-systems.com
+
 ## Author
 
 Stefan Len
