@@ -19,20 +19,9 @@ This repository is a compact portfolio project, not a production trading system.
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    A["MarketSnapshot"] --- C["ExecutionCycle"]
-    B["SignalInstruction"] --- C
-    D["PortfolioState"] --- C
-    E["RiskPolicy"] --- F["Risk Evaluation"]
-    C --- F
-    F ---|blocked| G["Fail-Closed Result"]
-    F ---|allowed| H["ExecutionPlan"]
-    H --- I["Deterministic Slices"]
-    F --- J["AuditLedger"]
-    H --- J
-    G --- J
-```
+<p align="center">
+  <img src="architecture/architecture-overview.svg" alt="Deterministic execution infrastructure architecture" width="100%">
+</p>
 
 The runtime shape is small:
 
@@ -65,6 +54,7 @@ tests/
   test_risk_policy.py
 
 architecture/
+  architecture-overview.svg
   deterministic-cycle.md
   safety-boundaries.md
 ```
