@@ -1,3 +1,6 @@
+# deterministic-execution-infrastructure
+# Copyright (c) 2026 Stefan Len
+# SPDX-License-Identifier: MIT
 """Deterministic order planning and client-order-id generation."""
 
 from __future__ import annotations

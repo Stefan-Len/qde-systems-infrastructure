@@ -1,3 +1,6 @@
+# deterministic-execution-infrastructure
+# Copyright (c) 2026 Stefan Len
+# SPDX-License-Identifier: MIT
 """Fail-closed pre-trade risk policy for the execution showcase."""
 
 from __future__ import annotations

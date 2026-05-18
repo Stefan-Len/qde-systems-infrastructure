@@ -1,3 +1,6 @@
+# deterministic-execution-infrastructure
+# Copyright (c) 2026 Stefan Len
+# SPDX-License-Identifier: MIT
 from execution_infrastructure import (
     MarketSnapshot,
     OrderType,

@@ -1,3 +1,6 @@
+# deterministic-execution-infrastructure
+# Copyright (c) 2026 Stefan Len
+# SPDX-License-Identifier: MIT
 """Deterministic execution infrastructure showcase package."""
 
 from .audit_ledger import AuditEvent, AuditLedger, verify_audit_chain

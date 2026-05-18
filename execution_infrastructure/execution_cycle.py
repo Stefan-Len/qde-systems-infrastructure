@@ -1,3 +1,6 @@
+# deterministic-execution-infrastructure
+# Copyright (c) 2026 Stefan Len
+# SPDX-License-Identifier: MIT
 """One deterministic risk-gated execution cycle."""
 
 from __future__ import annotations

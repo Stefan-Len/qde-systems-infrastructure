@@ -1,3 +1,6 @@
+# deterministic-execution-infrastructure
+# Copyright (c) 2026 Stefan Len
+# SPDX-License-Identifier: MIT
 """Append-only audit ledger with SHA-256 hash-chain verification."""
 
 from __future__ import annotations

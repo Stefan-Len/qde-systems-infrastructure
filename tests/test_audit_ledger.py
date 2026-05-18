@@ -1,3 +1,6 @@
+# deterministic-execution-infrastructure
+# Copyright (c) 2026 Stefan Len
+# SPDX-License-Identifier: MIT
 from dataclasses import replace
 
 from execution_infrastructure import AuditLedger, verify_audit_chain
