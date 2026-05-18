@@ -1,4 +1,8 @@
-# Deterministic Execution Infrastructure
+<p align="center">
+  <img src="assets/qde-systems-banner.png" alt="QDE Systems banner" width="100%">
+</p>
+
+# Quant Deterministic Execution Infrastructure
 
 Architecture sample for deterministic execution infrastructure: risk-gated decision flow, deterministic order planning, audit-safe runtime boundaries, and observable execution control.
 
