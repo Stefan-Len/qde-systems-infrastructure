@@ -21,17 +21,17 @@ This repository is a compact portfolio project, not a production trading system.
 
 ```mermaid
 flowchart LR
-    A["MarketSnapshot"] --> C["ExecutionCycle"]
-    B["SignalInstruction"] --> C
-    D["PortfolioState"] --> C
-    E["RiskPolicy"] --> F["Risk Evaluation"]
-    C --> F
-    F -->|blocked| G["Fail-Closed Result"]
-    F -->|allowed| H["ExecutionPlan"]
-    H --> I["Deterministic Slices"]
-    F --> J["AuditLedger"]
-    H --> J
-    G --> J
+    A["MarketSnapshot"] --- C["ExecutionCycle"]
+    B["SignalInstruction"] --- C
+    D["PortfolioState"] --- C
+    E["RiskPolicy"] --- F["Risk Evaluation"]
+    C --- F
+    F ---|blocked| G["Fail-Closed Result"]
+    F ---|allowed| H["ExecutionPlan"]
+    H --- I["Deterministic Slices"]
+    F --- J["AuditLedger"]
+    H --- J
+    G --- J
 ```
 
 The runtime shape is small:
