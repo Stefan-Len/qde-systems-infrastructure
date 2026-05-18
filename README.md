@@ -1,4 +1,4 @@
-# deterministic-execution-infrastructure
+# Deterministic Execution Infrastructure
 
 Architecture sample for deterministic execution infrastructure: risk-gated decision flow, deterministic order planning, audit-safe runtime boundaries, and observable execution control.
 
