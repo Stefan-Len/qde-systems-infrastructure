@@ -146,6 +146,8 @@ The public sample does not include broker integrations, proprietary
 strategy logic, private model artifacts, credentials, or production
 deployment materials.
 
+Brand and product identity notice: see [NOTICE](NOTICE).
+
 Contact: stefanlen@qde-systems.com
 
 ## Author
