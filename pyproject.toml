@@ -1,0 +1,18 @@
+[project]
+name = "deterministic-execution-infrastructure"
+version = "0.1.0"
+description = "Architecture showcase for deterministic execution infrastructure."
+requires-python = ">=3.10"
+authors = [
+    { name = "Stefan Len" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
