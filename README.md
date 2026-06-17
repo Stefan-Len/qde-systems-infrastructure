@@ -10,11 +10,17 @@ This repository is a compact portfolio project, not a production trading system.
 
 ## What This Demonstrates
 
+This public sample is intentionally small. It shows the engineering discipline behind deterministic execution infrastructure without exposing a commercial system.
+
+It demonstrates:
+
+- Risk admission before execution planning.
 - Deterministic execution-cycle orchestration.
-- Risk-first admission before any execution plan is produced.
 - Stable order slicing with deterministic `client_order_id` generation.
+- Blocked execution paths that produce no execution plan.
 - Append-only audit events with SHA-256 hash-chain integrity.
 - Small, testable boundaries for market input, signal intent, portfolio state, risk policy, and execution planning.
+- Tests that verify critical behavior.
 - Portfolio-safe code that avoids secrets, broker integrations, and proprietary strategy rules.
 
 ## Architecture
@@ -97,6 +103,32 @@ Trimmed example output:
 }
 ```
 
+## Blocked Execution Path
+
+When risk blocks a signal, the cycle returns no execution plan and records the block in the audit events. Trimmed output from the same runtime path:
+
+```json
+{
+  "run_id": "portfolio-demo-001",
+  "risk": {
+    "allowed": false,
+    "reason": "low_confidence",
+    "detail": "signal confidence is below policy minimum"
+  },
+  "execution_plan": null,
+  "audit_events": [
+    {
+      "sequence": 3,
+      "event_type": "execution_blocked",
+      "payload": {
+        "signal_id": "sig-20260518-002",
+        "reason": "low_confidence"
+      }
+    }
+  ]
+}
+```
+
 ## Run Tests
 
 ```bash
@@ -133,18 +165,15 @@ This repository does not include:
 - Persist structured evidence for every material decision.
 - Fail closed when a required safety condition is not met.
 
-## Commercial production version
+## Public Sample and Commercial Scope
 
 This repository is a public architecture sample only.
 
-The full production implementation, Quant Deterministic Execution Engine
-(QDE), is a separate proprietary commercial system available under a
-per-instrument exclusive commercial license. Private source-code review
-and technical due diligence are available under NDA.
+It shows the engineering shape behind deterministic execution infrastructure: risk admission before planning, deterministic order identifiers, explicit runtime boundaries, blocked execution paths, and audit evidence.
 
-The public sample does not include broker integrations, proprietary
-strategy logic, private model artifacts, credentials, or production
-deployment materials.
+A fuller commercial QDE source-code package can be discussed separately for qualified builders who want to study, extend, or integrate a broader execution infrastructure codebase.
+
+This public sample does not include broker integrations, private strategy logic, production deployment material, credentials, or commercial QDE source code.
 
 Brand and product identity notice: see [NOTICE](NOTICE).
 
