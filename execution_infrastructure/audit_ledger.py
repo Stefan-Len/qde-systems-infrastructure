@@ -1,5 +1,5 @@
-# deterministic-execution-infrastructure
-# Copyright (c) 2026 Stefan Len
+# qde-systems-infrastructure
+# Copyright (c) 2026 Štefan Lengyel, trading as Stefan Len / QDE-Systems
 # SPDX-License-Identifier: MIT
 """Append-only audit ledger with SHA-256 hash-chain verification."""
 

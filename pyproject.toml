@@ -1,10 +1,10 @@
 [project]
-name = "deterministic-execution-infrastructure"
+name = "qde-systems-infrastructure"
 version = "0.1.0"
 description = "Architecture showcase for deterministic execution infrastructure."
 requires-python = ">=3.10"
 authors = [
-    { name = "Stefan Len" },
+    { name = "Štefan Lengyel", email = "stefanlen@qde-systems.com" },
 ]
 license = { file = "LICENSE" }
 readme = "README.md"

@@ -2,15 +2,15 @@
   <img src="assets/qde-systems-banner.png" alt="QDE Systems banner" width="100%">
 </p>
 
-# Quant Deterministic Execution Infrastructure
+# QDE-Systems Infrastructure
 
-Architecture sample for deterministic execution infrastructure: risk-gated decision flow, deterministic order planning, audit-safe runtime boundaries, and observable execution control.
+Public technical reference repository for QDE-Systems infrastructure: risk-gated decision flow, deterministic order planning, audit-safe runtime boundaries, and observable execution control.
 
-This repository is a compact portfolio project, not a production trading system. It shows a small execution runtime where state, risk checks, execution planning, and audit evidence are kept as separate, testable boundaries.
+This repository is a compact public architecture sample, not the commercial QDE source package and not a production trading system. It shows a small execution runtime where state, risk checks, execution planning, and audit evidence are kept as separate, testable boundaries.
 
 ## What This Demonstrates
 
-This public sample is intentionally small. It shows the engineering discipline behind deterministic execution infrastructure without exposing a commercial system.
+This public sample is intentionally small. It shows selected engineering discipline behind deterministic execution infrastructure without exposing commercial QDE source code.
 
 It demonstrates:
 
@@ -171,9 +171,13 @@ This repository is a public architecture sample only.
 
 It shows the engineering shape behind deterministic execution infrastructure: risk admission before planning, deterministic order identifiers, explicit runtime boundaries, blocked execution paths, and audit evidence.
 
-A fuller commercial QDE source-code package can be discussed separately for qualified builders who want to study, extend, or integrate a broader execution infrastructure codebase.
+Commercial QDE source-code access is separate and application-based. It is intended for qualified operators/builders who understand the technical responsibility of working with execution infrastructure.
 
-This public sample does not include broker integrations, private strategy logic, production deployment material, credentials, or commercial QDE source code.
+This public sample does not include broker integrations, private strategy logic, production deployment material, credentials, private market-data configuration, IBKR integration, or commercial QDE source code.
+
+## Repository Name
+
+This repository is published as `qde-systems-infrastructure`. It is the public technical reference repository for QDE-Systems.
 
 Brand and product identity notice: see [NOTICE](NOTICE).
 
@@ -181,4 +185,4 @@ Contact: stefanlen@qde-systems.com
 
 ## Author
 
-Stefan Len
+Štefan Lengyel, trading as Stefan Len / QDE-Systems

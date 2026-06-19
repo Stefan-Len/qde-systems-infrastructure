@@ -1,5 +1,5 @@
-# deterministic-execution-infrastructure
-# Copyright (c) 2026 Stefan Len
+# qde-systems-infrastructure
+# Copyright (c) 2026 Štefan Lengyel, trading as Stefan Len / QDE-Systems
 # SPDX-License-Identifier: MIT
 """Deterministic order planning and client-order-id generation."""
 
