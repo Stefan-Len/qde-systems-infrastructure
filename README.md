@@ -9,7 +9,6 @@
   <img src="https://img.shields.io/badge/focus-deterministic%20execution-informational" alt="Focus: deterministic execution">
   <img src="https://img.shields.io/badge/risk-fail--closed-orange" alt="Risk: fail-closed">
   <img src="https://img.shields.io/badge/audit-evidence%20first-green" alt="Audit: evidence first">
-  <img src="https://img.shields.io/badge/broker-no%20integration%20included-red" alt="Broker: no integration included">
 </p>
 
 # QDE-Systems Infrastructure
@@ -17,6 +16,23 @@
 Public technical reference repository for QDE-Systems infrastructure: risk-gated decision flow, deterministic order planning, audit-safe runtime boundaries, and observable execution control.
 
 This repository is a compact public architecture sample, not the commercial QDE source package and not a production trading system. It shows a small execution runtime where state, risk checks, execution planning, and audit evidence are kept as separate, testable boundaries.
+
+## Related Public Repository
+
+The broader public QDE-Systems Engine presentation is here:
+
+[Stefan-Len/qde-systems-engine](https://github.com/Stefan-Len/qde-systems-engine)
+
+Use that repository for the public reading path, positioning, access/contact
+information, public technical overview, notice, and public content license.
+
+This `qde-systems-infrastructure` repository is the smaller technical reference
+sample. It demonstrates selected engineering ideas in code: risk-gated decision
+flow, deterministic order planning, fail-closed blocking, and audit evidence.
+
+Neither public repository is the commercial QDE source-code package, a signal
+service, financial advice, broker/account helpdesk, managed trading, or a
+LIVE-ready trading product.
 
 ## What This Demonstrates
 
@@ -181,9 +197,13 @@ This repository is a public architecture sample only.
 
 It shows the engineering shape behind deterministic execution infrastructure: risk admission before planning, deterministic order identifiers, explicit runtime boundaries, blocked execution paths, and audit evidence.
 
+For the full public presentation and access/contact path, see:
+
+[Stefan-Len/qde-systems-engine](https://github.com/Stefan-Len/qde-systems-engine)
+
 Commercial QDE source-code access is separate and application-based. It is intended for qualified operators/builders who understand the technical responsibility of working with execution infrastructure.
 
-This public sample does not include broker integrations, private strategy logic, production deployment material, credentials, private market-data configuration, IBKR integration, or commercial QDE source code.
+This public sample does not include broker integrations, private strategy logic, production deployment material, credentials, private market-data configuration, production broker adapter implementation, or commercial QDE source code.
 
 ## Repository Name
 
