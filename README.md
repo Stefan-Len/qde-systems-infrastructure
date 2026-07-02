@@ -211,7 +211,12 @@ This repository is published as `qde-systems-infrastructure`. It is the public t
 
 Brand and product identity notice: see [NOTICE](NOTICE).
 
-Contact: stefanlen@qde-systems.com
+## Official Links
+
+- GitHub: [Stefan-Len](https://github.com/Stefan-Len)
+- LinkedIn: [Stefan Len](https://www.linkedin.com/in/stefan-len-963813362/)
+- X: [@StefanLenQDE](https://x.com/StefanLenQDE)
+- Email: stefanlen@qde-systems.com
 
 ## Author
 
