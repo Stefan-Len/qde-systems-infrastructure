@@ -2,6 +2,16 @@
   <img src="assets/qde-systems-banner.png" alt="QDE-Systems banner" width="100%">
 </p>
 
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/python-%3E%3D3.10-blue" alt="Python >= 3.10">
+  <img src="https://img.shields.io/badge/status-public%20architecture%20sample-lightgrey" alt="Status: public architecture sample">
+  <img src="https://img.shields.io/badge/focus-deterministic%20execution-informational" alt="Focus: deterministic execution">
+  <img src="https://img.shields.io/badge/risk-fail--closed-orange" alt="Risk: fail-closed">
+  <img src="https://img.shields.io/badge/audit-evidence%20first-green" alt="Audit: evidence first">
+  <img src="https://img.shields.io/badge/broker-no%20integration%20included-red" alt="Broker: no integration included">
+</p>
+
 # QDE-Systems Infrastructure
 
 Public technical reference repository for QDE-Systems infrastructure: risk-gated decision flow, deterministic order planning, audit-safe runtime boundaries, and observable execution control.
