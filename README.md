@@ -26,14 +26,14 @@ broker integration, Topstep account detail, or performance claims.
 
 ## What This Repository Shows
 
-| QDE public layer | What the sample demonstrates | What stays private |
+| Public layer | What the sample demonstrates | What stays private |
 | --- | --- | --- |
-| `QDESyntheticResearchInput` | A named input profile for a QDE-style ES research run | Real market data and private data packages |
-| `QDEValidationCandidate` | Candidate records with provenance, side, family id, and deterministic ordering | Private setup-family rules and thresholds |
-| `QDEPublicValidationPipeline` | Fixed validation order: provenance, no-lookahead, material validation, public gate | The commercial QDE strategy engine |
-| `QDEPortfolioSummary` | A compact count-based scorecard shape | Real portfolio results or performance proof |
-| `QDEExecutionBoundarySummary` | A visible boundary after accepted candidates pass the public risk gate | Broker execution and live order routing |
-| `QDEAuditTrail` | Hash-linked audit events for later review | Production logs, broker state, credentials, or buyer material |
+| Synthetic research input | A named input profile for a synthetic ES research run | Real market data and private data packages |
+| Validation candidate | Candidate records with provenance, side, family id, and deterministic ordering | Private setup-family rules and thresholds |
+| Validation pipeline | Fixed validation order: provenance, no-lookahead, material validation, public gate | The commercial QDE strategy engine |
+| Portfolio summary | A compact count-based scorecard shape | Real portfolio results or performance proof |
+| Execution boundary summary | A visible boundary after accepted candidates pass the public risk gate | Broker execution and live order routing |
+| Audit trail | Hash-linked audit events for later review | Production logs, broker state, credentials, or buyer material |
 
 The point is not to show a trading strategy.
 
@@ -44,20 +44,20 @@ reasons, and no silent promotion from research candidate to execution boundary.
 ## Architecture
 
 <p align="center">
-  <img src="architecture/qde-systems-infrastructure-overview.svg" alt="QDE-Systems Infrastructure public validation flow" width="100%">
+  <img src="architecture/qde-systems-infrastructure-flow-v2.svg" alt="QDE-Systems Infrastructure public validation flow" width="100%">
 </p>
 
 The public flow is small:
 
-1. Build a synthetic `QDESyntheticResearchInput`.
-2. Feed QDE-style validation candidates into the pipeline.
+1. Build a synthetic research input.
+2. Feed synthetic validation candidates into the pipeline.
 3. Sort them deterministically.
 4. Apply public-safe validation gates.
 5. Pass accepted candidates through a public risk gate boundary.
 6. Keep the execution boundary visible without including broker execution.
-7. Build a count-based `QDEPortfolioSummary`.
-8. Record every material step in `QDEAuditTrail`.
-9. Return a `QDEPublicValidationResult`.
+7. Build a count-based portfolio summary.
+8. Record every material step in the audit trail.
+9. Return a public validation result.
 
 The public gate score is illustrative for the harness, not a production policy
 value.
@@ -82,7 +82,7 @@ tests/
 
 architecture/
   public-boundary.md
-  qde-systems-infrastructure-overview.svg
+  qde-systems-infrastructure-flow-v2.svg
 ```
 
 ## Run The Public Validation Harness
