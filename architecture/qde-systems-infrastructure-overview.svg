@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="720" viewBox="0 0 1700 720" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="640" viewBox="0 0 1500 640" role="img" aria-labelledby="title desc">
   <title id="title">QDE-Systems Infrastructure public validation and boundary flow</title>
-  <desc id="desc">Synthetic QDE input flows through deterministic ordering, validation gates, a public risk gate, portfolio summary, audit trail, and a non-broker execution boundary.</desc>
-  <rect width="1700" height="720" fill="#0b1117"/>
+  <desc id="desc">Synthetic input flows through candidate validation, deterministic ordering, a risk gate, portfolio summary, audit trail, and a non-broker execution boundary.</desc>
+  <rect width="1500" height="640" fill="#0b1117"/>
   <style>
     .box { fill:#232323; stroke:#8b8b8b; stroke-width:1.8; rx:0; }
     .boundary { fill:#181f27; stroke:#9ca3af; stroke-width:1.8; rx:0; }
@@ -11,64 +11,64 @@
     .tag { fill:#62666d; }
   </style>
 
-  <text x="70" y="70" class="label" font-size="30">QDE-Systems Infrastructure</text>
-  <text x="70" y="103" class="small">Public synthetic validation harness - not private strategy logic, not broker execution</text>
+  <text x="70" y="62" class="label" font-size="30">QDE-Systems Infrastructure</text>
+  <text x="70" y="95" class="small">Public synthetic validation harness - not private strategy logic, not broker execution</text>
 
-  <rect class="box" x="80" y="275" width="260" height="74"/>
-  <text class="label" x="106" y="320">QDESyntheticInput</text>
+  <rect class="box" x="80" y="255" width="220" height="74"/>
+  <text class="label" x="116" y="300">Synthetic Input</text>
 
-  <rect class="box" x="420" y="205" width="250" height="74"/>
-  <text class="label" x="452" y="250">QDECandidateSet</text>
+  <rect class="box" x="370" y="180" width="220" height="74"/>
+  <text class="label" x="415" y="225">Candidate Set</text>
 
-  <rect class="box" x="420" y="345" width="250" height="74"/>
-  <text class="label" x="448" y="390">QDEAuditTrail</text>
+  <rect class="box" x="370" y="330" width="220" height="74"/>
+  <text class="label" x="429" y="375">Audit Trail</text>
 
-  <rect class="box" x="750" y="275" width="270" height="74"/>
-  <text class="label" x="785" y="320">DeterministicOrder</text>
+  <rect class="box" x="660" y="255" width="230" height="74"/>
+  <text class="label" x="690" y="300">Deterministic Order</text>
 
-  <rect class="box" x="1100" y="275" width="220" height="74"/>
-  <text class="label" x="1140" y="320">QDERiskGate</text>
+  <rect class="box" x="950" y="255" width="190" height="74"/>
+  <text class="label" x="1003" y="300">Risk Gate</text>
 
-  <rect class="box" x="1400" y="155" width="240" height="74"/>
-  <text class="label" x="1432" y="200">RejectedCandidate</text>
+  <rect class="box" x="1230" y="135" width="200" height="74"/>
+  <text class="label" x="1287" y="180">Rejected</text>
 
-  <rect class="box" x="1400" y="275" width="240" height="74"/>
-  <text class="label" x="1434" y="320">BlockedCandidate</text>
+  <rect class="box" x="1230" y="255" width="200" height="74"/>
+  <text class="label" x="1294" y="300">Blocked</text>
 
-  <rect class="box" x="1400" y="395" width="240" height="74"/>
-  <text class="label" x="1433" y="440">AcceptedCandidate</text>
+  <rect class="box" x="1230" y="375" width="200" height="74"/>
+  <text class="label" x="1290" y="420">Accepted</text>
 
-  <rect class="boundary" x="1355" y="535" width="285" height="84"/>
-  <text class="label" x="1392" y="574">ExecutionBoundary</text>
-  <text class="small" x="1398" y="598">no broker adapter</text>
+  <rect class="boundary" x="1190" y="510" width="240" height="84"/>
+  <text class="label" x="1220" y="549">Execution Boundary</text>
+  <text class="small" x="1246" y="573">no broker adapter</text>
 
-  <rect class="box" x="750" y="535" width="270" height="74"/>
-  <text class="label" x="792" y="580">PortfolioSummary</text>
+  <rect class="box" x="660" y="500" width="230" height="74"/>
+  <text class="label" x="687" y="545">Portfolio Summary</text>
 
-  <rect class="box" x="1085" y="635" width="330" height="64"/>
-  <text class="label" x="1123" y="676">QDEPublicValidationResult</text>
+  <rect class="box" x="930" y="500" width="230" height="74"/>
+  <text class="label" x="965" y="545">Validation Result</text>
 
-  <path class="line" d="M340 312 C375 312 382 242 420 242"/>
-  <path class="line" d="M340 312 C375 312 382 382 420 382"/>
-  <path class="line" d="M670 242 C715 242 710 312 750 312"/>
-  <path class="line" d="M670 382 C715 382 710 312 750 312"/>
+  <path class="line" d="M300 292 C330 292 340 217 370 217"/>
+  <path class="line" d="M300 292 C330 292 340 367 370 367"/>
+  <path class="line" d="M590 217 C625 217 625 292 660 292"/>
+  <path class="line" d="M590 367 C625 367 625 292 660 292"/>
 
-  <path class="line" d="M1020 312 C1055 312 1065 312 1100 312"/>
+  <path class="line" d="M890 292 C915 292 925 292 950 292"/>
 
-  <path class="line" d="M1320 312 C1360 312 1362 192 1400 192"/>
-  <path class="line" d="M1320 312 C1360 312 1362 312 1400 312"/>
-  <path class="line" d="M1320 312 C1360 312 1362 432 1400 432"/>
+  <path class="line" d="M1140 292 C1170 292 1175 172 1230 172"/>
+  <path class="line" d="M1140 292 C1170 292 1175 292 1230 292"/>
+  <path class="line" d="M1140 292 C1170 292 1175 412 1230 412"/>
 
-  <rect class="tag" x="1330" y="173" width="86" height="34"/>
-  <text class="small" x="1341" y="196">reject</text>
-  <rect class="tag" x="1330" y="293" width="80" height="34"/>
-  <text class="small" x="1341" y="316">block</text>
-  <rect class="tag" x="1330" y="413" width="82" height="34"/>
-  <text class="small" x="1341" y="436">allow</text>
+  <rect class="tag" x="1160" y="153" width="78" height="34"/>
+  <text class="small" x="1171" y="176">reject</text>
+  <rect class="tag" x="1160" y="273" width="72" height="34"/>
+  <text class="small" x="1171" y="296">block</text>
+  <rect class="tag" x="1160" y="393" width="72" height="34"/>
+  <text class="small" x="1171" y="416">allow</text>
 
-  <path class="line" d="M1520 469 C1520 500 1500 510 1498 535"/>
-  <path class="line" d="M1498 619 C1498 655 1455 667 1415 667"/>
-  <path class="line" d="M885 535 C885 490 1015 450 1160 375"/>
-  <path class="line" d="M1020 572 C1065 572 1075 667 1085 667"/>
-  <path class="line" d="M545 419 C545 575 690 572 750 572"/>
+  <path class="line" d="M1330 449 C1330 480 1310 490 1310 510"/>
+  <path class="line" d="M1190 552 C1178 552 1172 552 1160 552"/>
+  <path class="line" d="M890 537 C905 537 915 537 930 537"/>
+  <path class="line" d="M480 404 C480 525 600 537 660 537"/>
+  <path class="line" d="M1045 329 C1030 420 950 500 890 537"/>
 </svg>
