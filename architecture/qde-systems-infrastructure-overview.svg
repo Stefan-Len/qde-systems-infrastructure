@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="720" viewBox="0 0 1700 720" role="img" aria-labelledby="title desc">
+  <title id="title">QDE-Systems Infrastructure public validation and boundary flow</title>
+  <desc id="desc">Synthetic QDE input flows through deterministic ordering, validation gates, a public risk gate, portfolio summary, audit trail, and a non-broker execution boundary.</desc>
+  <rect width="1700" height="720" fill="#0b1117"/>
+  <style>
+    .box { fill:#232323; stroke:#8b8b8b; stroke-width:1.8; rx:0; }
+    .boundary { fill:#181f27; stroke:#9ca3af; stroke-width:1.8; rx:0; }
+    .label { fill:#f3f4f6; font-family:Inter,Arial,sans-serif; font-size:22px; font-weight:700; }
+    .small { fill:#d1d5db; font-family:Inter,Arial,sans-serif; font-size:16px; font-weight:600; }
+    .line { fill:none; stroke:#c8c8c8; stroke-width:1.7; }
+    .tag { fill:#62666d; }
+  </style>
+
+  <text x="70" y="70" class="label" font-size="30">QDE-Systems Infrastructure</text>
+  <text x="70" y="103" class="small">Public synthetic validation harness - not private strategy logic, not broker execution</text>
+
+  <rect class="box" x="80" y="275" width="260" height="74"/>
+  <text class="label" x="106" y="320">QDESyntheticInput</text>
+
+  <rect class="box" x="420" y="205" width="250" height="74"/>
+  <text class="label" x="452" y="250">QDECandidateSet</text>
+
+  <rect class="box" x="420" y="345" width="250" height="74"/>
+  <text class="label" x="448" y="390">QDEAuditTrail</text>
+
+  <rect class="box" x="750" y="275" width="270" height="74"/>
+  <text class="label" x="785" y="320">DeterministicOrder</text>
+
+  <rect class="box" x="1100" y="275" width="220" height="74"/>
+  <text class="label" x="1140" y="320">QDERiskGate</text>
+
+  <rect class="box" x="1400" y="155" width="240" height="74"/>
+  <text class="label" x="1432" y="200">RejectedCandidate</text>
+
+  <rect class="box" x="1400" y="275" width="240" height="74"/>
+  <text class="label" x="1434" y="320">BlockedCandidate</text>
+
+  <rect class="box" x="1400" y="395" width="240" height="74"/>
+  <text class="label" x="1433" y="440">AcceptedCandidate</text>
+
+  <rect class="boundary" x="1355" y="535" width="285" height="84"/>
+  <text class="label" x="1392" y="574">ExecutionBoundary</text>
+  <text class="small" x="1398" y="598">no broker adapter</text>
+
+  <rect class="box" x="750" y="535" width="270" height="74"/>
+  <text class="label" x="792" y="580">PortfolioSummary</text>
+
+  <rect class="box" x="1085" y="635" width="330" height="64"/>
+  <text class="label" x="1123" y="676">QDEPublicValidationResult</text>
+
+  <path class="line" d="M340 312 C375 312 382 242 420 242"/>
+  <path class="line" d="M340 312 C375 312 382 382 420 382"/>
+  <path class="line" d="M670 242 C715 242 710 312 750 312"/>
+  <path class="line" d="M670 382 C715 382 710 312 750 312"/>
+
+  <path class="line" d="M1020 312 C1055 312 1065 312 1100 312"/>
+
+  <path class="line" d="M1320 312 C1360 312 1362 192 1400 192"/>
+  <path class="line" d="M1320 312 C1360 312 1362 312 1400 312"/>
+  <path class="line" d="M1320 312 C1360 312 1362 432 1400 432"/>
+
+  <rect class="tag" x="1330" y="173" width="86" height="34"/>
+  <text class="small" x="1341" y="196">reject</text>
+  <rect class="tag" x="1330" y="293" width="80" height="34"/>
+  <text class="small" x="1341" y="316">block</text>
+  <rect class="tag" x="1330" y="413" width="82" height="34"/>
+  <text class="small" x="1341" y="436">allow</text>
+
+  <path class="line" d="M1520 469 C1520 500 1500 510 1498 535"/>
+  <path class="line" d="M1498 619 C1498 655 1455 667 1415 667"/>
+  <path class="line" d="M885 535 C885 490 1015 450 1160 375"/>
+  <path class="line" d="M1020 572 C1065 572 1075 667 1085 667"/>
+  <path class="line" d="M545 419 C545 575 690 572 750 572"/>
+</svg>

@@ -1,8 +1,3 @@
-# qde-systems-infrastructure
-# Copyright (c) 2026 Štefan Lengyel, trading as Stefan Len / QDE-Systems
-# SPDX-License-Identifier: MIT
-"""Append-only audit ledger with SHA-256 hash-chain verification."""
-
 from __future__ import annotations
 
 import hashlib
@@ -12,9 +7,7 @@ from typing import Any
 
 
 @dataclass(frozen=True)
-class AuditEvent:
-    """One immutable audit event."""
-
+class QDEAuditEvent:
     sequence: int
     event_type: str
     payload: dict[str, Any]
@@ -23,7 +16,7 @@ class AuditEvent:
 
 
 def _stable_json(value: Any) -> str:
-    return json.dumps(value, sort_keys=True, separators=(",", ":"))
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), default=str)
 
 
 def _event_hash(
@@ -42,17 +35,15 @@ def _event_hash(
     return hashlib.sha256(_stable_json(body).encode("utf-8")).hexdigest()
 
 
-class AuditLedger:
-    """In-memory append-only audit ledger for the showcase runtime."""
-
+class QDEAuditTrail:
     def __init__(self) -> None:
-        self._events: list[AuditEvent] = []
+        self._events: list[QDEAuditEvent] = []
 
     @property
-    def events(self) -> tuple[AuditEvent, ...]:
+    def events(self) -> tuple[QDEAuditEvent, ...]:
         return tuple(self._events)
 
-    def append(self, event_type: str, payload: dict[str, Any]) -> AuditEvent:
+    def append(self, event_type: str, payload: dict[str, Any]) -> QDEAuditEvent:
         if not event_type.strip():
             raise ValueError("event_type is required")
         sequence = len(self._events) + 1
@@ -63,7 +54,7 @@ class AuditLedger:
             payload=payload,
             previous_hash=previous_hash,
         )
-        event = AuditEvent(
+        event = QDEAuditEvent(
             sequence=sequence,
             event_type=event_type,
             payload=dict(payload),
@@ -77,9 +68,7 @@ class AuditLedger:
         return "\n".join(_stable_json(asdict(event)) for event in self._events)
 
 
-def verify_audit_chain(events: tuple[AuditEvent, ...] | list[AuditEvent]) -> bool:
-    """Return true when sequence, previous hash, and event hash are consistent."""
-
+def verify_qde_audit_trail(events: tuple[QDEAuditEvent, ...] | list[QDEAuditEvent]) -> bool:
     previous_hash: str | None = None
     for expected_sequence, event in enumerate(events, start=1):
         if event.sequence != expected_sequence:

@@ -1,7 +1,7 @@
 [project]
 name = "qde-systems-infrastructure"
-version = "0.1.0"
-description = "Architecture showcase for deterministic execution infrastructure."
+version = "0.2.0"
+description = "Public QDE-Systems infrastructure validation harness."
 requires-python = ">=3.10"
 authors = [
     { name = "Štefan Lengyel", email = "stefanlen@qde-systems.com" },
