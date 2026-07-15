@@ -30,8 +30,8 @@ broker integration, Topstep account detail, or performance claims.
 | --- | --- | --- |
 | Synthetic research input | A named input profile for a synthetic ES research run | Real market data and private data packages |
 | Validation candidate | Candidate records with provenance, side, family id, and deterministic ordering | Private setup-family rules and thresholds |
-| Validation pipeline | Fixed validation order: provenance, no-lookahead, material validation, public gate | The commercial QDE strategy engine |
-| Portfolio summary | A compact count-based scorecard shape | Real portfolio results or performance proof |
+| Validation pipeline | Fixed validation order: provenance, no-lookahead, synthetic material-validation placeholder, public gate | The commercial QDE strategy engine |
+| Count-based scorecard | A compact accepted / rejected / blocked summary shape | Real portfolio results or performance proof |
 | Execution boundary summary | A visible boundary after accepted candidates pass the public risk gate | Broker execution and live order routing |
 | Audit trail | Hash-linked audit events for later review | Production logs, broker state, credentials, or buyer material |
 
@@ -55,12 +55,14 @@ The public flow is small:
 4. Apply public-safe validation gates.
 5. Pass accepted candidates through a public risk gate boundary.
 6. Keep the execution boundary visible without including broker execution.
-7. Build a count-based portfolio summary.
+7. Build a count-based scorecard.
 8. Record every material step in the audit trail.
 9. Return a public validation result.
 
-The public gate score is illustrative for the harness, not a production policy
-value.
+The public gate score is illustrative for the harness. It is not alpha, model
+confidence, predictive probability, or a production policy value. In the same
+way, `material_validation` is a synthetic placeholder flag in this public
+sample; it is not real strategy evidence.
 
 ## Repository Layout
 
@@ -123,8 +125,8 @@ The tests cover the public contract:
 - same candidates in different input order produce the same result id;
 - missing provenance is rejected;
 - no-lookahead failure is rejected;
-- missing material validation is blocked;
-- low public gate score is rejected;
+- missing synthetic material-validation placeholder is blocked;
+- low illustrative public gate score is rejected;
 - audit events verify through the hash chain.
 
 ## What This Is Not
@@ -161,8 +163,8 @@ boundary behind this repository.
 
 This repository is published as `qde-systems-infrastructure`. It is the public
 technical reference repository for the QDE-Systems infrastructure boundary:
-synthetic QDE-style candidates, deterministic validation, count-based portfolio
-summary, and reviewable audit evidence.
+synthetic QDE-style candidates, deterministic validation, count-based scorecard,
+and reviewable audit evidence.
 
 Brand identity notice: see [NOTICE](NOTICE).
 

@@ -8,10 +8,10 @@ It shows the shape of a QDE-Systems validation boundary:
 - deterministic candidate ordering;
 - provenance checks;
 - no-lookahead guard;
-- material validation gate;
+- synthetic material-validation placeholder gate;
 - public risk gate;
 - visible execution boundary without broker execution;
-- count-based portfolio summary;
+- count-based scorecard;
 - audit trail.
 
 It does not show the private QDE-Systems-ES strategy engine.
@@ -24,7 +24,7 @@ It does not show the private QDE-Systems-ES strategy engine.
 - Validation gates that describe infrastructure discipline.
 - A public risk gate summary.
 - A visible execution boundary with no broker adapter.
-- Count-based scorecard shape.
+- Count-based accepted / rejected / blocked scorecard shape.
 - Audit-chain mechanics.
 
 ## Not Allowed In This Public Repo
