@@ -44,7 +44,7 @@ reasons, and no silent promotion from research candidate to execution boundary.
 ## Architecture
 
 <p align="center">
-  <img src="architecture/qde-systems-infrastructure-flow-v2.svg" alt="QDE-Systems Infrastructure public validation flow" width="100%">
+  <img src="architecture/qde-systems-infrastructure-flow-v3.svg" alt="QDE-Systems Infrastructure public validation flow" width="100%">
 </p>
 
 The public flow is small:
@@ -82,7 +82,7 @@ tests/
 
 architecture/
   public-boundary.md
-  qde-systems-infrastructure-flow-v2.svg
+  qde-systems-infrastructure-flow-v3.svg
 ```
 
 ## Run The Public Validation Harness
