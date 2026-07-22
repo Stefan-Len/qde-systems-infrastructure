@@ -1,12 +1,13 @@
-QDE-Systems Infrastructure
+# Brand Notice
 
-This public repository is a bounded technical reference for QDE-Systems.
+QDE, QDE-Systems, QDE-Systems Engine, and Quant Deterministic Execution Engine
+are names associated with Štefan Lengyel, trading as Stefan Len / QDE-Systems.
 
-It does not contain the private QDE-Systems-ES source tree, commercial QDE source
-code, buyer material, credentials, broker integration, private market-data
-configuration, strategy family logic, detector thresholds, or performance proof.
+The MIT license applies to the source code in this public sample repository.
+It does not grant rights to use the QDE, QDE-Systems, QDE-Systems Engine, or
+Quant Deterministic Execution Engine names, logos, visual identity, or commercial
+product identity as a separate endorsement, affiliation, or product mark.
 
-The public validation harness uses synthetic records and public-safe QDE naming
-to demonstrate deterministic infrastructure boundaries.
-
-© 2026 Štefan Lengyel, trading as Stefan Len / QDE-Systems.
+This public sample repository is not a fund, investment club, trading signal
+room, managed account service, broker service, financial advice source, support
+service, or commercial QDE source-code delivery channel.

@@ -3,114 +3,155 @@
 </p>
 
 <p align="center">
-  <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-6db33f">
-  <img alt="Python 3.10+" src="https://img.shields.io/badge/python-%3E%3D3.10-3776ab">
-  <img alt="Repository: public validation harness" src="https://img.shields.io/badge/repository-public%20validation%20harness-555555">
-  <img alt="Focus: QDE-Systems infrastructure" src="https://img.shields.io/badge/focus-QDE--Systems%20infrastructure-2563eb">
-  <img alt="Boundary: no strategy leak" src="https://img.shields.io/badge/boundary-no%20strategy%20leak-b91c1c">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/python-%3E%3D3.10-blue" alt="Python >= 3.10">
+  <img src="https://img.shields.io/badge/status-public%20architecture%20sample-lightgrey" alt="Status: public architecture sample">
+  <img src="https://img.shields.io/badge/focus-deterministic%20execution-informational" alt="Focus: deterministic execution">
+  <img src="https://img.shields.io/badge/risk-fail--closed-orange" alt="Risk: fail-closed">
+  <img src="https://img.shields.io/badge/audit-evidence%20first-green" alt="Audit: evidence first">
 </p>
 
 # QDE-Systems Infrastructure
 
-Public infrastructure reference for QDE-Systems.
+Public technical reference repository for QDE-Systems infrastructure: risk-gated decision flow, deterministic order planning, audit-safe runtime boundaries, and observable execution control.
 
-This repository is not the private QDE-Systems-ES source tree and it is not a
-strategy leak. It is a small public harness that shows how I think about
-deterministic research infrastructure: clear input contracts, no-lookahead
-checks, candidate gates, portfolio-level summary, and an audit trail that can be
-reviewed after the run.
+This repository is a compact public architecture sample, not the commercial QDE source package and not a production trading system. It shows a small execution runtime where state, risk checks, execution planning, and audit evidence are kept as separate, testable boundaries.
 
-The sample is intentionally synthetic. It uses QDE-style names and structure,
-but it does not contain private setup-family logic, real historical data,
-broker integration, Topstep account detail, or performance claims.
+## Related Public Repository
 
-## What This Repository Shows
+The broader public QDE-Systems Engine presentation is here:
 
-| Public layer | What the sample demonstrates | What stays private |
-| --- | --- | --- |
-| Synthetic research input | A named input profile for a synthetic ES research run | Real market data and private data packages |
-| Validation candidate | Candidate records with provenance, side, family id, and deterministic ordering | Private setup-family rules and thresholds |
-| Validation pipeline | Fixed validation order: provenance, no-lookahead, synthetic material-validation placeholder, public gate | The commercial QDE strategy engine |
-| Count-based scorecard | A compact accepted / rejected / blocked summary shape | Real portfolio results or performance proof |
-| Execution boundary summary | A visible boundary after accepted candidates pass the public risk gate | Broker execution and live order routing |
-| Audit trail | Hash-linked audit events for later review | Production logs, broker state, credentials, or buyer material |
+[Stefan-Len/qde-systems-engine](https://github.com/Stefan-Len/qde-systems-engine)
 
-The point is not to show a trading strategy.
+Use that repository for the public reading path, positioning, access/contact
+information, public technical overview, notice, and public content license.
 
-The point is to show the shape of a QDE-Systems infrastructure boundary:
-deterministic input, explicit validation, a visible risk gate, reviewable
-reasons, and no silent promotion from research candidate to execution boundary.
+This `qde-systems-infrastructure` repository is the smaller technical reference
+sample. It demonstrates selected engineering ideas in code: risk-gated decision
+flow, deterministic order planning, fail-closed blocking, and audit evidence.
+
+Neither public repository is the commercial QDE source-code package, a signal
+service, financial advice, broker/account helpdesk, managed trading, or a
+LIVE-ready trading product.
+
+## What This Demonstrates
+
+This public sample is intentionally small. It shows selected engineering discipline behind deterministic execution infrastructure without exposing commercial QDE source code.
+
+It demonstrates:
+
+- Risk admission before execution planning.
+- Deterministic execution-cycle orchestration.
+- Stable order slicing with deterministic `client_order_id` generation.
+- Blocked execution paths that produce no execution plan.
+- Append-only audit events with SHA-256 hash-chain integrity.
+- Small, testable boundaries for market input, signal intent, portfolio state, risk policy, and execution planning.
+- Tests that verify critical behavior.
+- Portfolio-safe code that avoids secrets, broker integrations, and proprietary strategy rules.
 
 ## Architecture
 
 <p align="center">
-  <img src="architecture/qde-systems-infrastructure-flow-v3.svg" alt="QDE-Systems Infrastructure public validation flow" width="100%">
+  <img src="architecture/architecture-overview.svg" alt="Deterministic execution infrastructure architecture" width="100%">
 </p>
 
-The public flow is small:
+The runtime shape is small:
 
-1. Build a synthetic research input.
-2. Feed synthetic validation candidates into the pipeline.
-3. Sort them deterministically.
-4. Apply public-safe validation gates.
-5. Pass accepted candidates through a public risk gate boundary.
-6. Keep the execution boundary visible without including broker execution.
-7. Build a count-based scorecard.
-8. Record every material step in the audit trail.
-9. Return a public validation result.
-
-The public gate score is illustrative for the harness. It is not alpha, model
-confidence, predictive probability, or a production policy value. In the same
-way, `material_validation` is a synthetic placeholder flag in this public
-sample; it is not real strategy evidence.
+1. Receive a `MarketSnapshot`.
+2. Receive a `SignalInstruction`.
+3. Read current `PortfolioState`.
+4. Evaluate `RiskPolicy`.
+5. Produce an `ExecutionPlan` only when risk allows it.
+6. Write structured audit events.
+7. Return a deterministic `CycleResult` envelope.
 
 ## Repository Layout
 
 ```text
-qde_systems_infrastructure/
+execution_infrastructure/
   __init__.py
-  audit_trail.py
-  models.py
-  portfolio_scorecard.py
-  validation_pipeline.py
+  audit_ledger.py
+  execution_cycle.py
+  execution_plan.py
+  market_state.py
+  risk_policy.py
 
 examples/
-  run_qde_systems_validation.py
+  run_execution_cycle.py
 
 tests/
-  test_audit_trail.py
-  test_deterministic_output.py
-  test_qde_public_validation.py
+  test_audit_ledger.py
+  test_execution_cycle.py
+  test_execution_plan.py
+  test_risk_policy.py
 
 architecture/
-  public-boundary.md
-  qde-systems-infrastructure-flow-v3.svg
+  architecture-overview.svg
+  deterministic-cycle.md
+  safety-boundaries.md
 ```
 
-## Run The Public Validation Harness
+## Run The Example
 
 ```bash
-python3 examples/run_qde_systems_validation.py
+python3 examples/run_execution_cycle.py
 ```
 
 Trimmed example output:
 
 ```json
 {
-  "run_id": "qde-systems-public-validation-001",
-  "system": "QDE-Systems Infrastructure",
-  "validation_profile": "synthetic_qde_es_research_flow",
-  "instrument_focus": "ES",
-  "candidate_count": 4,
-  "accepted_count": 1,
-  "rejected_count": 2,
-  "blocked_count": 1,
-  "risk_gate_status": "qde_public_risk_gate_passed_for_accepted_candidates",
-  "execution_boundary": "review_only_no_broker_adapter",
-  "broker_execution_included": false,
-  "audit_event_count": 9,
-  "deterministic_output": true,
-  "result_id": "qde-result-2f9ff00a407380a4"
+  "run_id": "portfolio-demo-001",
+  "risk": {
+    "allowed": true,
+    "reason": "allowed"
+  },
+  "execution_plan": {
+    "signal_id": "sig-20260518-001",
+    "symbol": "ES",
+    "direction": "LONG",
+    "total_quantity": 7,
+    "slices": [
+      {
+        "client_order_id": "coid-00e94013682ccf79",
+        "quantity": 5,
+        "order_type": "IOC",
+        "sequence": 1
+      },
+      {
+        "client_order_id": "coid-0516624b1c539339",
+        "quantity": 2,
+        "order_type": "IOC",
+        "sequence": 2
+      }
+    ]
+  }
+}
+```
+
+## Blocked Execution Path
+
+When risk blocks a signal, the cycle returns no execution plan and records the block in the audit events. Trimmed output from the same runtime path:
+
+```json
+{
+  "run_id": "portfolio-demo-001",
+  "risk": {
+    "allowed": false,
+    "reason": "low_confidence",
+    "detail": "signal confidence is below policy minimum"
+  },
+  "execution_plan": null,
+  "audit_events": [
+    {
+      "sequence": 3,
+      "event_type": "execution_blocked",
+      "payload": {
+        "signal_id": "sig-20260518-002",
+        "reason": "low_confidence"
+      }
+    }
+  ]
 }
 ```
 
@@ -120,53 +161,55 @@ Trimmed example output:
 python3 -m pytest
 ```
 
-The tests cover the public contract:
+Requires Python 3.10 or newer.
 
-- same candidates in different input order produce the same result id;
-- missing provenance is rejected;
-- no-lookahead failure is rejected;
-- missing synthetic material-validation placeholder is blocked;
-- low illustrative public gate score is rejected;
-- audit events verify through the hash chain.
+The tests cover the main contract:
 
-## What This Is Not
+- low-confidence signals fail closed;
+- exposure and open-position caps block execution;
+- order slicing is deterministic;
+- audit-chain verification detects tampering;
+- blocked cycles never produce an execution plan.
 
-This repository is not:
+## Non-Goals
 
-- the private `QDE-Systems-ES` source repo;
-- a trading strategy;
-- a backtest result;
-- a signal service;
-- financial advice;
-- a broker connector;
-- a Topstep compliance proof;
-- a performance or profit claim;
-- a LIVE-ready trading system.
+This repository does not include:
 
-It does not include private family logic, detector thresholds, live account
-state, broker adapter implementation, credentials, private market-data
-configuration, or commercial QDE source code.
+- real broker connectivity;
+- proprietary trading strategy logic;
+- live market-data credentials;
+- autonomous production execution;
+- private model artifacts;
+- customer, vendor, or account-specific data.
 
-## Public Boundary
+## Design Principles
 
-The public harness uses synthetic records so the infrastructure shape can be
-inspected without exposing the private system.
+- Make decision order explicit.
+- Treat model output as input to a controlled runtime, not as authority.
+- Keep risk and execution boundaries separate.
+- Generate deterministic execution identifiers.
+- Persist structured evidence for every material decision.
+- Fail closed when a required safety condition is not met.
 
-The naming is QDE-specific on purpose. Generic examples hide the real design
-question. QDE-Systems is about research and execution infrastructure where a
-candidate has to pass explicit gates before it can become accepted output.
+## Public Sample and Commercial Scope
 
-See [Public Boundary](architecture/public-boundary.md) for the disclosure
-boundary behind this repository.
+This repository is a public architecture sample only.
+
+It shows the engineering shape behind deterministic execution infrastructure: risk admission before planning, deterministic order identifiers, explicit runtime boundaries, blocked execution paths, and audit evidence.
+
+For the full public presentation and access/contact path, see:
+
+[Stefan-Len/qde-systems-engine](https://github.com/Stefan-Len/qde-systems-engine)
+
+Commercial QDE source-code access is separate and application-based. It is intended for qualified operators/builders who understand the technical responsibility of working with execution infrastructure.
+
+This public sample does not include broker integrations, private strategy logic, production deployment material, credentials, private market-data configuration, production broker adapter implementation, or commercial QDE source code.
 
 ## Repository Name
 
-This repository is published as `qde-systems-infrastructure`. It is the public
-technical reference repository for the QDE-Systems infrastructure boundary:
-synthetic QDE-style candidates, deterministic validation, count-based scorecard,
-and reviewable audit evidence.
+This repository is published as `qde-systems-infrastructure`. It is the public technical reference repository for QDE-Systems.
 
-Brand identity notice: see [NOTICE](NOTICE).
+Brand and product identity notice: see [NOTICE](NOTICE).
 
 ## Official Links
 
